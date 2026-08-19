@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root { --background:#fff; --foreground:#374151; }
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--background); color: var(--foreground); font-family: 'Inter', sans-serif; }
+  h1,h2,h3,h4,h5,h6 { font-family:'Poppins',sans-serif; }
+  button,a { cursor:pointer; }
+}
+
+@layer components {
+  .container { width:100%; margin-inline:auto; padding-inline:1rem; }
+  .section-padding { padding:4rem 1rem; }
+  .btn-primary { background:#0066CC; color:#fff; font-weight:600; padding:.75rem 2rem; border-radius:.5rem; transition:all .3s; box-shadow:0 4px 10px rgba(0,0,0,.12); }
+  .btn-primary:hover { background:#1E40AF; transform:translateY(-1px); }
+  .btn-secondary { background:#fff; color:#0066CC; font-weight:600; padding:.75rem 2rem; border-radius:.5rem; border:2px solid #0066CC; transition:all .3s; }
+  .btn-secondary:hover { background:#F5F7FA; }
+  .btn-success { background:#10B981; color:#fff; font-weight:600; padding:.75rem 2rem; border-radius:.5rem; transition:all .3s; box-shadow:0 4px 10px rgba(0,0,0,.12); }
+  .btn-success:hover { background:#059669; }
+  .service-card { background:#fff; border-radius:.75rem; box-shadow:0 4px 12px rgba(0,0,0,.08); border:1px solid #E5E7EB; overflow:hidden; transition:all .3s; }
+  .service-card:hover { box-shadow:0 12px 28px rgba(0,0,0,.12); transform:scale(1.02); }
+  .gradient-blue { background:linear-gradient(135deg,#001F3F 0%,#0066CC 100%); }
+}
+
+@media (min-width:640px) { .container { padding-inline:1.5rem; } .section-padding { padding:4rem 1.5rem; } }
+@media (min-width:768px) { .section-padding { padding-block:6rem; } }
+@media (min-width:1024px) { .container { max-width:1280px; padding-inline:2rem; } }
+
+@keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes slideInRight { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:translateX(0); } }
+@keyframes pulseGlow { 0%,100% { box-shadow:0 0 0 0 rgba(0,102,204,.7); } 50% { box-shadow:0 0 0 10px rgba(0,102,204,0); } }
+.animate-fade-in-up { animation:fadeInUp .6s ease-out both; }
+.animate-slide-in-right { animation:slideInRight .6s ease-out both; }
+.animate-pulse-glow { animation:pulseGlow 2s infinite; }
